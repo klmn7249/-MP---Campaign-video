@@ -13,6 +13,7 @@ body {
 /* container ne középre igazítson */
 .container {
     position: absolute;
+    top: 5%;
     width: 100vw;
     height: 100vh;
 }
@@ -20,7 +21,7 @@ body {
 /* 🔥 EZ A LÉNYEG */
 video {
     position: absolute;
-    top: 5%;              /* mindig felül */
+    top: 0;              /* mindig felül */
     left: 50%;
     transform: translateX(-50%);
 

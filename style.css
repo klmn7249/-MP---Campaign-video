@@ -29,6 +29,7 @@ video {
     max-width: 100%;           /* soha ne lógjon ki oldalra */
     max-height: 100%;          /* maradjon kb középen */
     object-fit: contain;        /* teljes képet lássunk */
+    background: transparent;
     display: block;
 }
 

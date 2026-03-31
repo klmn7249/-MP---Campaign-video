@@ -5,57 +5,47 @@
 }
 
 body {
-    margin: 0;
-    background: black;
+    background: linear-gradient(135deg, #fd8100 0%, #8a4a1f 40%, #081c3f 100%);
     overflow: hidden;
-}
-
-/* container ne középre igazítson */
-.container {
-    position: absolute;
-    top: 5%;
-    width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;  /* vízszintesen középre */
+    align-items: center;      /* függőlegesen középre */
+    font-family: Arial, sans-serif;
 }
 
-/* 🔥 EZ A LÉNYEG */
-video {
-    position: absolute;
-    top: 0;              /* mindig felül */
-    left: 50%;
-    transform: translateX(-50%);
-
+.container {
+    position: relative;
     width: 100vw;
-    height: auto;        /* arány megtartása */
-    max-height: 100vh;   /* ne lógjon ki */
-
-    object-fit: contain;
-    background: black;
-}
-
-/* OVERLAY - gradient háttér */
-#overlay {
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        135deg,
-        #fd8100 0%,
-        #8a4a1f 40%,
-        #081c3f 100%
-    );
-
+    max-width: 100%;          /* minden képernyőre */
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+/* VIDEO */
+video {
+    max-width: 100%;           /* soha ne lógjon ki oldalra */
+    max-height: 90vh;          /* maradjon kb középen */
+    object-fit: contain;        /* teljes képet lássunk */
+    background: transparent;    /* a gradiens látszik mögötte */
+    display: block;
+}
+
+/* OVERLAY */
+#overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
 
-    /* fade in */
+    background: rgba(0,0,0,0.0); /* áttetsző, háttér a body-ból jön */
+
     animation: fadeIn 1s ease forwards;
 }
 
-/* PLAY BUTTON */
 #playBtn {
     width: 110px;
     height: 110px;
@@ -77,13 +67,11 @@ video {
     transition: all 0.3s ease;
 }
 
-/* hover / tap */
 #playBtn:hover {
     transform: scale(1.1);
     background: rgba(255,255,255,0.25);
 }
 
-/* pulzáló animáció */
 #playBtn::after {
     content: "";
     position: absolute;
@@ -126,24 +114,12 @@ video {
 
 /* ANIMÁCIÓK */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    70% {
-        transform: scale(1.6);
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+    0% { transform: scale(1); opacity: 0.8; }
+    70% { transform: scale(1.6); opacity: 0; }
+    100% { opacity: 0; }
 }

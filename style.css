@@ -22,7 +22,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #fd8100 0%, #8a4a1f 40%, #081c3f 100%);
 }
 
 /* VIDEO */

@@ -5,13 +5,13 @@
 }
 
 body {
+    background: linear-gradient(135deg, #fd8100 0%, #8a4a1f 40%, #081c3f 100%);
     overflow: hidden;
     height: 100vh;
     display: flex;
     justify-content: center;  /* vízszintesen középre */
     align-items: center;      /* függőlegesen középre */
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #fd8100 0%, #8a4a1f 40%, #081c3f 100%);
 }
 
 .container {

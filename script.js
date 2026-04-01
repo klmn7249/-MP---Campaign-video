@@ -1,3 +1,4 @@
+const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
 const video = document.getElementById("video");
 const playBtn = document.getElementById("playBtn");
 const overlay = document.getElementById("overlay");

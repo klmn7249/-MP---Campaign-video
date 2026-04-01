@@ -116,16 +116,22 @@ video {
     animation: fadeIn 0.6s ease forwards;
 }
 #disclaimer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
     color: rgba(255,255,255,0.7);
     font-size: 12px;
     text-align: center;
 
     width: 90%;
     max-width: 400px;
-    margin-top: 10px;
 
-    pointer-events: none; /* ne zavarja a UX-et */
+    pointer-events: none;
+    z-index: 10;
 }
+
 /* ANIMÁCIÓK */
 @keyframes fadeIn {
     from { opacity: 0; }

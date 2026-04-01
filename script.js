@@ -34,7 +34,7 @@ document.addEventListener("contextmenu", e => e.preventDefault());
 document.addEventListener("keydown", e => e.preventDefault());
 
 document.addEventListener("DOMContentLoaded", () => {
-    const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+    const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         document.querySelector(".container").style.display = "none";

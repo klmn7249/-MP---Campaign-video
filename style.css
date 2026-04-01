@@ -128,7 +128,26 @@ video {
     pointer-events: none; /* ne zavarja a UX-et */
     z-index: 4;
     }
+#desktopBlock {
+    position: fixed;
+    inset: 0;
 
+    background: linear-gradient(135deg, #fd8100 0%, #8a4a1f 40%, #081c3f 100%);
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    text-align: center;
+    z-index: 999;
+}
+
+#desktopBlock img {
+    width: 200px;
+    margin-top: 20px;
+}
 /* ANIMÁCIÓK */
 @keyframes fadeIn {
     from { opacity: 0; }
